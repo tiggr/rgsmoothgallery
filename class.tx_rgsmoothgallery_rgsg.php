@@ -3,9 +3,6 @@ class tx_rgsmoothgallery_rgsg {
 
 function user_rgsg($content,$conf) {
 
-require_once (PATH_t3lib.'class.t3lib_page.php');
-require_once (PATH_t3lib.'class.t3lib_tstemplate.php');
-require_once (PATH_t3lib.'class.t3lib_tsparser_ext.php');
 
 		$sysPageObj = t3lib_div::makeInstance('t3lib_pageSelect');
 		$rootLine = $sysPageObj->getRootLine($GLOBALS['TSFE']->id);

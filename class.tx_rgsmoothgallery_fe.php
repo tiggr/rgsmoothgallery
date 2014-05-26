@@ -45,7 +45,7 @@ class tx_rgsmoothgallery_fe{
 			$rgsgConf = $rgsgConfDefault;
 		}
 		
-		#echo t3lib_div::view_array($rgsgConf);
+		#echo t3lib_utility_Debug::viewArray($rgsgConf);
 		$this->rgsgConf = $rgsgConf;
 		// if the configuration is available, otherwise just do nothing
 		if ($rgsgConf) {

@@ -34,7 +34,6 @@ define('PATH_site', ereg_replace('[^/]*.[^/]*$','',dirname(dirname(PATH_thisScri
 define('PATH_typo3', PATH_site.'typo3/');
 define('PATH_typo3conf', PATH_site.'typo3conf/');
 define('PATH_t3lib', PATH_site.'t3lib/');
-require_once(PATH_t3lib.'class.t3lib_div.php');
 
 $image = $_GET['image'];
 
