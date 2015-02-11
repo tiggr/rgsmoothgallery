@@ -187,9 +187,17 @@ class tx_rgsmoothgallery_fe {
 
 				// write new gallery into the marker
 				$markerName = $this->rgsgConf['imageMarker'] ? $this->rgsgConf['imageMarker'] : 'NEWS_IMAGE';
+				// lazy load images
+				//$content = str_replace(' src="', ' data-original="', $content);
 				$markerArray['###' . $markerName . '###'] = '<div class="news-single-img">' . $content . '</div>';
 			} elseif ($this->rgsgConf['imageMarker'] != '') {
 				$markerArray['###' . $this->rgsgConf['imageMarker'] . '###'] = '';
+			} else {
+				// lazy load single images;
+				$markerName = $this->rgsgConf['imageMarker'] ? $this->rgsgConf['imageMarker'] : 'NEWS_IMAGE';
+				$content = $markerArray['###'.$markerName.'###'];
+				$content = str_replace(' src="', ' data-original="', $content);
+				$markerArray['###'.$markerName.'###'] = $content;
 			}
 		} # end if ($rgsgConf) {
 
