@@ -59,7 +59,10 @@
                     <type>popup</type>
                     <title>Folder Selector</title>
                     <icon>link_popup.gif</icon>
-                    <script>EXT:rgfolderselector/browse_links.php</script>
+                    <!--script>EXT:rgfolderselector/browse_links.php</script-->
+                    <module type="array">
+                      <name>wizard_element_browser</name>
+                    </module>
                     <JSopenParams>height=400,width=400,status=0,menubar=0,scrollbars=1</JSopenParams>
                   </link>
   							</wizards>
