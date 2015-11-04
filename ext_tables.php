@@ -54,7 +54,6 @@ $tempColumns = Array (
         )
     ),
 );
-t3lib_div::loadTCA("tt_content");
 t3lib_extMgm::addTCAcolumns("tt_content",$tempColumns,1);
 
  
