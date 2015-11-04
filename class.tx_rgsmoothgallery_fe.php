@@ -1,4 +1,6 @@
 <?php
+
+
 /***************************************************************
  *  Copyright notice
  *  (c) 2006 Georg Ringer <typo3@ringerge.org>
@@ -69,7 +71,7 @@ class tx_rgsmoothgallery_fe {
 			$caption = explode("\n", $row[$captionField]);
 
 			// If there are any images and minimum count of images is reached
-			if ($row[$imageField] && count($images) >= $rgsgConf['minimumImages']) {
+			if ($row[$imageField]){// && count($images) >= $rgsgConf['minimumImages']) {
 				// call rgsmoothgallery
 				require_once(t3lib_extMgm::extPath('rgsmoothgallery') . 'pi1/class.tx_rgsmoothgallery_pi1.php');
 				$this->gallery = t3lib_div::makeInstance('tx_rgsmoothgallery_pi1');
@@ -114,34 +116,6 @@ class tx_rgsmoothgallery_fe {
 
 				// configuration
 				$configuration = '
-				<script type="text/javascript">' . $externalControl1 . '
-					function startGallery' . $uniqueId . '() {
-						if(window.gallery' . $uniqueId . ') {
-							try {
-								' . $externalControl2 . ' myGallery' . $uniqueId . ' = new gallery($(\'myGallery' . $uniqueId . '\'), {
-									' . $duration . ',
-									showArrows: ' . $arrows . ',
-									showCarousel: ' . $thumbs . ',
-									textShowCarousel: "' . $morePicsString . '",
-									embedLinks:' . $lightbox . ',
-									' . $advancedSettings . '
-									lightbox:true
-								});
-								var mylightbox = new LightboxSmoothgallery();
-							}	catch(error){
-								window.setTimeout("startGallery' . $uniqueId . '();",2500);
-							}
-						} else {
-							window.gallery' . $uniqueId . '=true;
-							if(this.ie) {
-								window.setTimeout("startGallery' . $uniqueId . '();",3000);
-							} else {
-								window.setTimeout("startGallery' . $uniqueId . '();",100);
-							}
-						}
-					}
-					window.onDomReady(startGallery' . $uniqueId . ');
-				</script>
 				<noscript>
 					<div><img src="' . $this->cObj->IMG_RESOURCE($noJsImg) . '"  /></div>
 				</noscript>
@@ -230,16 +204,17 @@ class tx_rgsmoothgallery_fe {
 		if ($this->rgsgConf['showThumbs']) {
 			$imgTSConfigThumb = $this->rgsgConf['thumb.'];
 			$imgTSConfigThumb['file'] = $path;
-			$thumbImage = '<img src="' . $this->cObj->IMG_RESOURCE($imgTSConfigThumb) . '" class="thumbnail" />';
+#			$thumbImage = '<img src="' . $this->cObj->IMG_RESOURCE( $imgTSConfigThumb ) . '" class="thumbnail" />';
+			$thumbImage = $this->cObj->IMG_RESOURCE( $imgTSConfigThumb );
 		}
 
 		// build the image element
-		$singleImage .= '
-			<div class="imageElement">
-			' . $text . $lightBoxImage . '
-			<img src="' . $bigImage . '" class="full" />
-			' . $thumbImage . '
-			</div>';
+		$singleImage = '<img
+			class="rsImg"
+     		src="' . $bigImage . '"
+			data-rsTmb="' . $thumbImage . '"
+			data-rsBigImg="' . $lightbox . '"
+			/>';
 
 		return $singleImage;
 	}
