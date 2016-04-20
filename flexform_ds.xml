@@ -29,7 +29,7 @@
 							</config>
 						</TCEforms>
 					</mode>
-				
+
 					<time>
 						<TCEforms>
 							<label>LLL:EXT:rgsmoothgallery/locallang.xml:flexform.sheets.general.time</label>
@@ -60,16 +60,20 @@
                     <title>Folder Selector</title>
                     <icon>link_popup.gif</icon>
                     <!--script>EXT:rgfolderselector/browse_links.php</script-->
-                    <module type="array">
-                      <name>wizard_element_browser</name>
-                    </module>
+                      <module type="array">
+                          <name>wizard_element_browser</name>
+                          <urlParameters type="array">
+                              <mode>wizard</mode>
+                              <act>file</act>
+                          </urlParameters>
+                      </module>
                     <JSopenParams>height=400,width=400,status=0,menubar=0,scrollbars=1</JSopenParams>
                   </link>
   							</wizards>
   						</config>
   					</TCEforms>
   				</startingpoint>
-                    	                            	
+
           <text>
             <TCEforms>
             <displayCond>FIELD:mode:!IN:RECORDS,DAM,DAMCAT</displayCond>
@@ -80,8 +84,8 @@
                 <rows>10</rows>
               </config>
             </TCEforms>
-          </text>						
-            		
+          </text>
+
 					<startingpointrecords>
 						<TCEforms>
 						<displayCond>FIELD:mode:=:RECORDS</displayCond>
@@ -97,7 +101,7 @@
 								<autoSizeMax>30</autoSizeMax>
 							</config>
 						</TCEforms>
-					</startingpointrecords>				
+					</startingpointrecords>
 
 					<width>
 						<TCEforms>
@@ -118,7 +122,7 @@
 							</config>
 						</TCEforms>
 					</height>
-                  
+
 					<widthgallery>
 						<TCEforms>
 							<label>LLL:EXT:rgsmoothgallery/locallang.xml:flexform.sheets.general.widthgallery</label>
@@ -137,10 +141,10 @@
 								<size>3</size>
 							</config>
 						</TCEforms>
-					</heightgallery>					
-					
+					</heightgallery>
 
-  		
+
+
 	    </el>
 	  </ROOT>
     </sDEF>
@@ -161,8 +165,8 @@
                 <default>1</default>
               </config>
             </TCEforms>
-          </lightbox>		
-          
+          </lightbox>
+
 
 
           <arrows>
@@ -173,8 +177,8 @@
                 <default>1</default>
               </config>
             </TCEforms>
-          </arrows>				
-  
+          </arrows>
+
           <showThumbs>
             <TCEforms>
               <label>LLL:EXT:rgsmoothgallery/locallang.xml:flexform.sheets.advanced.showThumbs</label>
@@ -183,7 +187,7 @@
                 <default>1</default>
               </config>
             </TCEforms>
-          </showThumbs>	
+          </showThumbs>
 
           <showPlay>
             <TCEforms>
@@ -193,8 +197,8 @@
                 <default>0</default>
               </config>
             </TCEforms>
-          </showPlay>	
-          
+          </showPlay>
+
           <watermark>
             <TCEforms>
               <label>LLL:EXT:rgsmoothgallery/locallang.xml:flexform.sheets.advanced.watermark</label>
@@ -202,10 +206,10 @@
                 <type>check</type>
               </config>
             </TCEforms>
-          </watermark> 
+          </watermark>
 
 
-                    
+
           <limitImagesDisplayed>
             <TCEforms>
               <label>LLL:EXT:rgsmoothgallery/locallang.xml:flexform.sheets.advanced.limitImagesDisplayed</label>
@@ -216,10 +220,10 @@
                 <checkbox>0</checkbox>
               </config>
             </TCEforms>
-          </limitImagesDisplayed>	
+          </limitImagesDisplayed>
 
 
-                    
+
 <!--
            <advanced>
             <TCEforms>
@@ -235,12 +239,12 @@
 										<numIndex index="0">LLL:EXT:rgsmoothgallery/locallang.xml:flexform.sheets.general.mode.1</numIndex>
 										<numIndex index="1">1</numIndex>
 									</numIndex>
-                </items>              
+                </items>
             </config>
             </TCEforms>
           </advanced>
 -->
-          
+
           <thumbopacity>
             <TCEforms>
               <label>LLL:EXT:rgsmoothgallery/locallang.xml:flexform.sheets.advanced.thumbopacity</label>
@@ -251,7 +255,7 @@
                 <checkbox>0</checkbox>
               </config>
             </TCEforms>
-          </thumbopacity>		
+          </thumbopacity>
 
           <thumbspacing>
             <TCEforms>
@@ -263,7 +267,7 @@
                 <checkbox></checkbox>
               </config>
             </TCEforms>
-          </thumbspacing>	          
+          </thumbspacing>
 
           <infopane>
             <TCEforms>
@@ -272,7 +276,7 @@
               <type>check</type>
             </config>
             </TCEforms>
-          </infopane>            
+          </infopane>
 
           <slideinfozoneopacity>
             <TCEforms>
@@ -284,7 +288,7 @@
                 <checkbox>0</checkbox>
               </config>
             </TCEforms>
-          </slideinfozoneopacity>	        
+          </slideinfozoneopacity>
 
 					<externalthumbs>
 						<TCEforms>
@@ -304,8 +308,8 @@
               <type>check</type>
             </config>
             </TCEforms>
-          </externalcontrol> 
-          					
+          </externalcontrol>
+
            <advancedsettings>
             <TCEforms>
               <label>LLL:EXT:rgsmoothgallery/locallang.xml:flexform.sheets.advanced.advancedsettings</label>
@@ -315,12 +319,12 @@
                 <rows>2</rows>
               </config>
             </TCEforms>
-          </advancedsettings>      
-          
+          </advancedsettings>
+
 
 	    </el>
 	  </ROOT>
     </advanced>
-    			
+
   </sheets>
 </T3DataStructure>

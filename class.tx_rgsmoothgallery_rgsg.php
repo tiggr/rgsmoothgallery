@@ -24,9 +24,9 @@ $css .= ($row['imagewidth']) ?  'width:'.$row['imagewidth'].'px;' : '';
 $css .= ($row['imageheight']) ?  'height:'.$row['imageheight'].'px;' : '';
  $GLOBALS['TSFE']->additionalCSS['rgsmoothgallery'.$id] = '#myGallery'.$id.' {'.$css.'}';
 
-	 if (t3lib_extMgm::isLoaded('t3mootools'))    {
-	   require_once(t3lib_extMgm::extPath('t3mootools').'class.tx_t3mootools.php');
-	 } 	 
+	 if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('t3mootools'))    {
+	   require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('t3mootools').'class.tx_t3mootools.php');
+	 }
 
 	 if (defined('T3MOOTOOLS')) {
 	 	tx_t3mootools::addMooJS();
@@ -34,8 +34,8 @@ $css .= ($row['imageheight']) ?  'height:'.$row['imageheight'].'px;' : '';
 	 } else {
       $header.= $this->getPath($this->conf['pathToMootools']) ?  '<script src="'.$this->getPath($this->conf['pathToMootools']).'" type="text/javascript"></script>' :'';
 
-	 }  
-	 
+	 }
+
     // path to js + css
 
 		$GLOBALS['TSFE']->additionalHeaderData['rgsmoothgallery'] = $header.'
@@ -54,13 +54,13 @@ return  $content;
     if (substr($path,0,4)=='EXT:') {
       $keyEndPos = strpos($path, '/', 6);
       $key = substr($path,4,$keyEndPos-4);
-      $keyPath = t3lib_extMgm::siteRelpath($key);
+      $keyPath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelpath($key);
       $newPath = $keyPath.substr($path,$keyEndPos+1);
       return $newPath;
     }	else {
       return $path;
     }
   } # end getPath
-    
+
 }
 ?>
