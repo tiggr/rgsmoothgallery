@@ -197,6 +197,9 @@ class tx_rgsmoothgallery_fe {
 			$imgTSConfigLightbox['file'] = $path;
 		}
 		$bigImage = $this->cObj->IMG_RESOURCE($imgTSConfigBig);
+		if (!$bigImg) {
+			return '';
+		}
 
 		$lightbox = ($this->rgsgConf['lightbox']) ? $this->cObj->IMG_RESOURCE($imgTSConfigLightbox) : 'javascript:void(0)';
 		$lightBoxImage = '<a href="' . $lightbox . '" title="Open Image" class="open"></a>';
