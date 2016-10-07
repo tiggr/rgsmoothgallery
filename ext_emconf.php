@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'description' => 'Slideshow & Gallery. Shows images from directory folders, from records and inside tt_content (Element "Text with images") DAM and tt_news. +Thumbnail-Browser, +Lightbox. Demo: http://www.rggooglemap.com/dev/rgsmoothgallery.html',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '1.5.2',
+	'version' => '7.6.0',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -32,13 +32,13 @@ $EM_CONF[$_EXTKEY] = array (
 	'author_company' => 'http://www.just2b.com',
 	'CGLcompliance' => NULL,
 	'CGLcompliance_note' => NULL,
-	'constraints' => 
+	'constraints' =>
 	array (
-		'depends' => 
+		'depends' =>
 		array (
 		),
 		'conflicts' => '',
-		'suggests' => 
+		'suggests' =>
 		array (
 		),
 	),
