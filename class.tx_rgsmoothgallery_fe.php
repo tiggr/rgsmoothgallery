@@ -197,7 +197,7 @@ class tx_rgsmoothgallery_fe {
 			$imgTSConfigLightbox['file'] = $path;
 		}
 		$bigImage = $this->cObj->IMG_RESOURCE($imgTSConfigBig);
-		if (!$bigImg) {
+		if (!$bigImage) {
 			return '';
 		}
 
