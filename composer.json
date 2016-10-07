@@ -7,5 +7,12 @@
   "keywords": ["TYPO3 CMS", "slider", "slideshow", "gallery"],
   "replace": {
     "rgsmoothgallery": "self.version"
+  },
+  "autoload": {
+    "classmap": [
+      "pi1",
+      "class.tx_rgsmoothgallery_fe.php",
+      "class.tx_rgsmoothgallery_rgsg.php"
+    ]
   }
 }
