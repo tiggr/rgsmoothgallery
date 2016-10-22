@@ -37,7 +37,7 @@ $TCA["tx_rgsmoothgallery_image"] = array (
             'disabled' => 'hidden',
         ),
         'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY).'tca.php',
-        'iconfile'          => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY).'icon_tx_rgsmoothgallery_image.gif',
+        'iconfile'          => 'EXT:rgsmoothgallery/icon_tx_rgsmoothgallery_image.gif',
     ),
     "feInterface" => array (
         "fe_admin_fieldList" => "sys_language_uid, l18n_parent, l18n_diffsource, hidden, title, description, image",
