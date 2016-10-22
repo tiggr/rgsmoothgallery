@@ -117,7 +117,7 @@ class tx_rgsmoothgallery_fe {
 				// configuration
 				$configuration = '
 				<noscript>
-					<div><img src="' . $this->cObj->IMG_RESOURCE($noJsImg) . '"  /></div>
+					<div><img src="' . $this->cObj->cObjGetSingle('IMG_RESOURCE', $noJsImg) . '"  /></div>
 				</noscript>
 			';
 
@@ -137,7 +137,7 @@ class tx_rgsmoothgallery_fe {
 					$imgTSConfigBig['file'] = $path;
 					$imgTSConfigLightbox = $rgsgConf['lightbox.'];
 					$imgTSConfigLightbox['file'] = $path;
-					# $lightbox = ($rgsgConf['lightbox']==1) ? $this->cObj->IMG_RESOURCE($imgTSConfigLightbox) : $this->cObj->IMG_RESOURCE($imgTSConfigLightbox);
+					# $lightbox = ($rgsgConf['lightbox']==1) ? $this->cObj->cObjGetSingle('IMG_RESOURCE', $imgTSConfigLightbox) : $this->cObj->cObjGetSingle('IMG_RESOURCE', $imgTSConfigLightbox);
 
 					// caption text
 					$text = explode('|', $caption[$i]);
@@ -196,20 +196,20 @@ class tx_rgsmoothgallery_fe {
 			$imgTSConfigLightbox = $this->rgsgConf['lightbox.'];
 			$imgTSConfigLightbox['file'] = $path;
 		}
-		$bigImage = $this->cObj->IMG_RESOURCE($imgTSConfigBig);
+		$bigImage = $this->cObj->cObjGetSingle('IMG_RESOURCE', $imgTSConfigBig);
 		if (!$bigImage) {
 			return '';
 		}
 
-		//$lightbox = ($this->rgsgConf['lightbox']) ? $this->cObj->IMG_RESOURCE($imgTSConfigLightbox) : 'javascript:void(0)';
-		$lightbox = ($this->rgsgConf['lightbox']) ? $this->cObj->IMG_RESOURCE($imgTSConfigLightbox) : 'javascript:void(0)';
+		//$lightbox = ($this->rgsgConf['lightbox']) ? $this->cObj->cObjGetSingle('IMG_RESOURCE', $imgTSConfigLightbox) : 'javascript:void(0)';
+		$lightbox = ($this->rgsgConf['lightbox']) ? $this->cObj->cObjGetSingle('IMG_RESOURCE', $imgTSConfigLightbox) : 'javascript:void(0)';
 		$lightBoxImage = '<a href="' . $lightbox . '" title="Open Image" class="open"></a>';
 
 		if ($this->rgsgConf['showThumbs']) {
 			$imgTSConfigThumb = $this->rgsgConf['thumb.'];
 			$imgTSConfigThumb['file'] = $path;
-#			$thumbImage = '<img src="' . $this->cObj->IMG_RESOURCE( $imgTSConfigThumb ) . '" class="thumbnail" />';
-			$thumbImage = $this->cObj->IMG_RESOURCE( $imgTSConfigThumb );
+#			$thumbImage = '<img src="' . $this->cObj->cObjGetSingle('IMG_RESOURCE',  $imgTSConfigThumb ) . '" class="thumbnail" />';
+			$thumbImage = $this->cObj->cObjGetSingle('IMG_RESOURCE',  $imgTSConfigThumb );
 		}
 
 		// build the image element

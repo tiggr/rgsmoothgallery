@@ -646,16 +646,16 @@ class tx_rgsmoothgallery_pi1 extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin {
 			$imgTSConfigLightbox = $this->conf['lightbox.'];
 			$imgTSConfigLightbox['file'] = $path;
 		}
-		$bigImage = $this->cObj->IMG_RESOURCE( $imgTSConfigBig );
+		$bigImage = $this->cObj->cObjGetSingle('IMG_RESOURCE',  $imgTSConfigBig );
 
-		$lightbox = ($lightbox == '#' || $lightbox == '' || $this->config['lightbox'] != 1) ? 'javascript:void(0)' : $this->cObj->IMG_RESOURCE( $imgTSConfigLightbox );
+		$lightbox = ($lightbox == '#' || $lightbox == '' || $this->config['lightbox'] != 1) ? 'javascript:void(0)' : $this->cObj->cObjGetSingle('IMG_RESOURCE',  $imgTSConfigLightbox );
 		$lightbox = str_replace( ' ', '%20', $lightbox ); // search for empty chars, thx maxhb
 		$lightBoxImage = '<a href="' . $lightbox . '" title="' . $this->pi_getLL( 'textOpenImage' ) . '" class="open"></a>';
 
 		if ($thumb) {
 			$imgTSConfigThumb = $this->conf['thumb.'];
 			$imgTSConfigThumb['file'] = $path;
-			$thumbImage = '<img src="' . $this->cObj->IMG_RESOURCE( $imgTSConfigThumb ) . '" class="thumbnail" />';
+			$thumbImage = '<img src="' . $this->cObj->cObjGetSingle('IMG_RESOURCE',  $imgTSConfigThumb ) . '" class="thumbnail" />';
 		}
 
 		// just add the wraps if there is a text for it or if there is no lightbox which needs the title of course!
