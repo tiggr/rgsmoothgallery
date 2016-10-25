@@ -62,7 +62,9 @@ class tx_rgsmoothgallery_pi1_wizicon {
 					 */
 					function includeLocalLang()	{
 						$llFile = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('rgsmoothgallery').'locallang.xml';
-						$LOCAL_LANG = \TYPO3\CMS\Core\Utility\GeneralUtility::readLLfile($llFile, $GLOBALS['LANG']->lang);
+						/** @var $languageFactory \TYPO3\CMS\Core\Localization\LocalizationFactory */
+						$languageFactory = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Localization\LocalizationFactory::class);
+						$LOCAL_LANG = $languageFactory->getParsedData($llFile, $GLOBALS['LANG']->lang);
 
 						return $LOCAL_LANG;
 					}
